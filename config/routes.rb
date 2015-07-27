@@ -1,23 +1,27 @@
 Rails.application.routes.draw do
-  get 'staticpages/home'
+  devise_for :users
 
-  get 'staticpages/help'
+  devise_scope :user do
+    get "sign_in", to: "devise/sessions#new"
+    get "sign_up", to: "devise/registrations#new"
+  end
 
-  get 'staticpages/contact'
-
-  get 'staticpages/about'
+  root "staticpages#home"
+  get "staticpages/help"
+  get "staticpages/contact"
+  get "staticpages/about"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root "welcome#index"
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get "products/:id" => "catalog#view"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get "products/:id/purchase" => "catalog#purchase", as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -25,12 +29,12 @@ Rails.application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
-  #       post 'toggle'
+  #       get "short"
+  #       post "toggle"
   #     end
   #
   #     collection do
-  #       get 'sold'
+  #       get "sold"
   #     end
   #   end
 
@@ -44,13 +48,13 @@ Rails.application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', on: :collection
+  #       get "recent", on: :collection
   #     end
   #   end
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     post "toggle"
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
