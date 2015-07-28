@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require signin
+//= require signup
 //= require bootstrap-sprockets

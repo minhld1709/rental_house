@@ -31,7 +31,7 @@ $(document).ready(function(){
     }
   });
 
-  $('#signin_modal').on('hidden.bs.modal', function (e) {
+  $('#signup_modal').on('hidden.bs.modal', function (e) {
     var inputs = $('form input');
     var title = $('.modal-title');
     var progressBar = $('.progress-bar');
