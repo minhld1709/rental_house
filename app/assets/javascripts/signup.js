@@ -39,8 +39,6 @@ $(document).ready(function(){
 
     inputs.removeAttr("disabled");
 
-    title.text("Log in");
-
     progressBar.css({ "width" : "0%" });
 
     button.removeClass("btn-success")
@@ -49,3 +47,7 @@ $(document).ready(function(){
       .removeAttr("data-dismiss");
   });
 });
+
+function switch_to_signin(){
+  $(".close").click();
+}

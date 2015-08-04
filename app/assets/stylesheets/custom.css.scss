@@ -6,24 +6,53 @@
   float: right;
 }
 
-.modal-title {
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
   text-align: center;
 }
 
-.another_login {
-  padding-right: 25px;
-  .lead {
-    margin-bottom: 10px;
-  }
-
-  a {
-    margin-bottom: 7px;
-  }
+.center h1 {
+  margin-bottom: 10px;
 }
 
-.modal-dialog {
-  margin-top: 100px;
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
 }
-.modal-title {
-  font-size: 30px;
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }

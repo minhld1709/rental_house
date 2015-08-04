@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render "shared/user_dashboard" %>
+  <%= render "shared/header" %>
+  <div class="container">
+    <%= yield %>
+    <%= render "shared/footer" %>
+  </div>
 </body>
+<%= render "shared/signin_modal" %>
+<%= render "shared/signup_modal" %>
 </html>
