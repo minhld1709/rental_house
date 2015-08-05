@@ -51,3 +51,8 @@ $(document).ready(function(){
 function switch_to_signin(){
   $(".close").click();
 }
+
+function check_signup(error){
+  $("#signup_modal").modal("hide")
+  window.location.reload();
+}
