@@ -2,8 +2,25 @@
   <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help",   '#' %></li>
+        <% if user_signed_in? %>
+          <li>
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+              <%= image_tag "avatar_default.png" %> Le Dinh Minh
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><%= link_to "My Profile", "#" %></li>
+              <li role="presentation"><%= link_to "Settings", "#" %></li>
+              <li role="presentation"><%= link_to "Log out", signout_path %></li>
+              <li role="presentation" class="divider"></li>
+              <li><%= link_to "About Us", "#" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Login", "#", {data: {toggle: "modal", target: "#signin_modal"}} %></li>
+          <li><%= link_to "Registration", "#", {data: {toggle: "modal", target: "#signup_modal"}} %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
