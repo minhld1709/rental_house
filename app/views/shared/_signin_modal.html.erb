@@ -9,27 +9,25 @@
         <div class="row">
           <div class="col-xs-6">
             <div class="well">
-              <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
-                <div class="form-group">
-                  <label for="email" class="control-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email"
-                  title="Please enter you email" placeholder="example@gmail.com">
-                  <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                  <label for="password" class="control-label">Password</label>
-                  <input type="password" class="form-control" id="password"
-                  name="password" title="Please enter your password">
-                  <span class="help-block"></span>
-                </div>
-                <div id="loginErrorMsg" class="alert alert-error hide">Wrong email og password</div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="remember" id="remember"> Remember login
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-success btn-block btn-signin">Login</button>
-              </form>
+              <%= form_for( @user, url: session_path(@user)) do |f| %>
+                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                  <div class="form-group">
+                    <%= f.label :email, class: "control-label" %>
+                    <%= f.email_field :email, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :password, class: "control-label" %>
+                    <%= f.password_field :password, class: "form-control" %>
+                  </div>
+                  <div id="loginErrorMsg" class="alert alert-error hide">Wrong email og password</div>
+                  <div class="checkbox">
+                    <label>
+                      <%= f.check_box :remember_me %> Remember login
+                    </label>
+                  </div>
+                  <%= f.submit "Log in", class: "btn btn-success btn-block btn-signin" %>
+                </form>
+              <% end %>
             </div>
           </div>
           <div class="col-xs-6 another_login">

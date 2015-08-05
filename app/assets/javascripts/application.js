@@ -17,7 +17,3 @@
 //= require signup
 //= require bootstrap-sprockets
 //= require sweet-alert
-
-function test(){
-  sweetAlert("Oops...", "Something went wrong!", "error");
-}
